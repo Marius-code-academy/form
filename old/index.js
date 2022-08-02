@@ -21,6 +21,8 @@ function removeErrorClassFromElement(event) {
   event.target.classList.remove('error');
 }
 
+const vardas = 3;
+
 function resetHandler(event) {
   event.preventDefault();
   formRegister.reset();
@@ -29,7 +31,7 @@ function resetHandler(event) {
 function submitHandler(event) {
   event.preventDefault();
   const invalidEntries = validateData();
-  console.log(invalidEntries.length);
+  console.log(!invalidEntries.length);
   if (!invalidEntries.length) {
     formRegister.submit();
   } else {
@@ -40,14 +42,17 @@ function submitHandler(event) {
 }
 
 function errorInput(input) {
+  let suma = 0;
   input.classList.add('error');
 }
 
 function validateData() {
   const invalidEntries = [];
+
   if (nameInput.value === '') {
     invalidEntries.push(nameInput);
   }
+
   if (lastNameInput.value === '') {
     invalidEntries.push(lastNameInput);
   }
