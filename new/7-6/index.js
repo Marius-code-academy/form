@@ -8,6 +8,7 @@ inputTriangleSize.addEventListener('input', inputSizeHandler);
 function inputSizeHandler(e) {
   const size = e.target.value;
   let rez = '';
+
   for (let index = 1; index <= size; index++) {
     for (let j = 0; j < index; j++) {
       rez += '*';
